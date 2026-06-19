@@ -1,7 +1,7 @@
 import express from 'express';
 import { createServer, get } from 'http';
 
-hello
+const app = express();
 
 app.get('/', (req, res) =>
 {
@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 server.listen(PORT, () =>
 {
   console.log(`Server is running on port ${PORT}`);
-
+  
   get(`http://localhost:${PORT}`, (res) =>
   {
     console.log(`GET request to / returned status code: ${res.statusCode}`);

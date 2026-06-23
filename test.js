@@ -1,8 +1,6 @@
 import express from 'express';
 import { createServer, get } from 'http';
 
-hello
-
 app.get('/', (req, res) =>
 {
   res.send('Hello World!');

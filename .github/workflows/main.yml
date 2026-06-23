@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: Notify on failure
         run: |
-          curl -X POST "${{ secrets.WEBHOOK_URL }}" \
+          curl -X POST "${{ secrets.WEBHOOK_URL }}/api/failure/callback" \
             -H "Content-Type: application/json" \
             -H "x-webhook-signature: ${{ secrets.WEBHOOK_SIGNATURE }}" \
             -d '{

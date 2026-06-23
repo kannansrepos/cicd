@@ -34,9 +34,9 @@ jobs:
     steps:
       - name: Notify on failure
         run: |
-          curl -X POST "${{ secrets.N8N_WEBHOOK_URL }}" \
+          curl -X POST "${{ secrets.WEBHOOK_URL }}" \
             -H "Content-Type: application/json" \
-            -H "x-webhook-signature: ${{ secrets.N8N_WEBHOOK_SIGNATURE }}" \
+            -H "x-webhook-signature: ${{ secrets.WEBHOOK_SIGNATURE }}" \
             -d '{
             "run_id": "${{ github.run_id }}",
             "run_number": "${{ github.run_number }}",

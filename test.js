@@ -1,13 +1,15 @@
 import express from 'express';
-import { createServer, get } from 'http';
+import http from 'http';
 
+
+const app = express();
 
 app.get('/', (req, res) =>
 {
   res.send('Hello World!');
 });
 
-const server = createServer(app);
+const server = http.createServer(app);
 
 const PORT = process.env.PORT || 5000;
 
@@ -15,7 +17,7 @@ server.listen(PORT, () =>
 {
   console.log(`Server is running on port ${PORT}`);
 
-  get(`http://localhost:${PORT}`, (res) =>
+  http.get(`http://localhost:${PORT}`, (res) =>
   {
     console.log(`GET request to / returned status code: ${res.statusCode}`);
     if (res.statusCode === 200)

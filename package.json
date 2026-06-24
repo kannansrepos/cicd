@@ -1,24 +1,39 @@
 {
-  "name": "My Project",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "node test.js",
-    "build": "node index.js"
+  \"name\": \"My Project\",
+  \"version\": \"1.0.0\",
+  \"description\": \"\",
+  \"main\": \"index.js\",
+  \"scripts\": {
+    \"test\": \"npm run test:unit\",
+    \"test:unit\": \"jest tests/unit\",
+    \"test:integration\": \"jest tests/integration\",
+    \"test:e2e\": \"playwright test\",
+    \"build\": \"node index.js\",
+    \"start\": \"node index.js\"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "^11.2.2",
-      "onFail": "download"
+  \"keywords\": [],
+  \"author\": \"\",
+  \"license\": \"ISC\",
+  \"devEngines\": {
+    \"packageManager\": {
+      \"name\": \"pnpm\",
+      \"version\": \"^11.2.2\",
+      \"onFail\": \"download\"
     }
   },
-  "type": "module",
-  "dependencies": {
-    "express": "^5.2.1"
+  \"type\": \"module\",
+  \"dependencies\": {
+    \"express\": \"^5.2.1\"
+  },
+  \"devDependencies\": {
+    \"jest\": \"^29.7.0\",
+    \"supertest\": \"^7.0.0\",
+    \"@playwright/test\": \"^1.50.0\"
+  },
+  \"jest\": {
+    \"testMatch\": [\"tests/unit/**/*.spec.js\", \"tests/integration/**/*.spec.js\"],
+    \"collectCoverageFrom\": [\"mathHelpers.js\", \"index.js\"],
+    \"coverageDirectory\": \"coverage\",
+    \"coverageReporters\": [\"lcov\", \"text\"]
   }
 }

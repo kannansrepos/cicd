@@ -1,6 +1,6 @@
 import express from 'express';
 import { createServer, get } from 'http';
-
+const app = express(); // Define the app variable as an Express application
 
 app.get('/', (req, res) =>
 {
